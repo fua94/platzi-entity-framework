@@ -1,0 +1,13 @@
+services:
+  dotnet_6:
+    container_name: dotnet_6
+    build: .
+    volumes:
+      # - vendor:/var/www/html/vendor
+      # - node_modules:/var/www/html/node_modules
+      - ./:/home
+    # ports:
+    #   - 8000:8000
+# volumes:
+#   vendor:
+#   node_modules:
