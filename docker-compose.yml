@@ -7,10 +7,7 @@ services:
       # - node_modules:/var/www/html/node_modules
       - ./:/home
     ports:
-      - 127.0.0.1:5000:80
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80'
+      - 5000:5000
 # volumes:
 #   vendor:
 #   node_modules:
