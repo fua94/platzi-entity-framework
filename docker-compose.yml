@@ -8,6 +8,21 @@ services:
       - ./:/home
     ports:
       - 5000:5000
+  # db_sqlserver:
+  #   container_name: db_sqlserver
+  #   image: mcr.microsoft.com/mssql/server:2017-latest
+  #   environment:
+  #     ACCEPT_EULA: "Y"
+  #     SA_PASSWORD: "toor"
+  #   ports:
+  #     - 1433:1433
+  db_postgres:
+    container_name: db_postgres
+    image: postgres:16.3-alpine
+    environment:
+      POSTGRES_PASSWORD: root
+    ports:
+      - 5435:5432
 # volumes:
 #   vendor:
 #   node_modules:
