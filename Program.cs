@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddNpgsql<TasksContext>(@"Host=127.0.0.1:5435;Username=postgres;Password=root;Database=Tasks");
+builder.Services.AddNpgsql<TasksContext>(builder.Configuration.GetConnectionString("TasksDb"));
 
 var app = builder.Build();
 
