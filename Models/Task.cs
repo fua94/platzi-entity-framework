@@ -1,6 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace home.Models;
 
 public class Task
@@ -11,6 +8,7 @@ public class Task
     public string Description { get; set; }
     public Priority Priority { get; set; }
     public DateTime CreateAt { get; set; }
+    public int Effort { get; set; }
     public virtual Category Category { get; set; }
     public string Summary { get; set; }
 }

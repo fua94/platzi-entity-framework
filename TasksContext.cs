@@ -29,6 +29,7 @@ public class TasksContext : DbContext
       task.Property(t => t.Description);
       task.Property(t => t.Priority);
       task.Property(t => t.CreateAt);
+      task.Property(t => t.Effort);
       task.Ignore(t => t.Summary);
     });
   }

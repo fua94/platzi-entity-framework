@@ -10,6 +10,10 @@ Cada migración debe de tener un nombre descriptivo
 
 `dotnet ef migrations add InitialCreate`
 
+Añadir una migración que actualiza una columna
+
+`dotnet ef migrations add ColumnEffortTask`
+
 Si queremos utilizar migrations en producción debemos hacerlo una vez que se haya terminado el esquema, o sea mientras no hayan datos.
 Cada vez que agreguemos una migración debemos usar el comando:
 

@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace home.Models;
 
 public class Category
