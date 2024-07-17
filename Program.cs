@@ -9,6 +9,10 @@ builder.Services.AddNpgsql<TasksContext>(builder.Configuration.GetConnectionStri
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
+app.MapGet("/api/tasks", async ([FromServices] TasksContext dbContext) =>
+{
+  return Results.Ok(dbContext.Tasks.Include(p => p.Category));
+});
 app.MapGet("/dbconection", async ([FromServices] TasksContext dbContext) =>
 {
   dbContext.Database.EnsureCreated();
