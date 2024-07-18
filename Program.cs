@@ -13,6 +13,14 @@ app.MapGet("/api/tasks", async ([FromServices] TasksContext dbContext) =>
 {
   return Results.Ok(dbContext.Tasks.Include(p => p.Category));
 });
+app.MapPost("/api/tasks", async ([FromServices] TasksContext dbContext, [FromBody] home.Models.Task task) =>
+{
+  task.Id = Guid.NewGuid();
+  task.CreateAt = DateTime.Now;
+  await dbContext.AddAsync(task);
+  await dbContext.SaveChangesAsync();
+  return Results.Ok();
+});
 app.MapGet("/dbconection", async ([FromServices] TasksContext dbContext) =>
 {
   dbContext.Database.EnsureCreated();

@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace home.Models;
 
 public class Task
@@ -10,6 +12,7 @@ public class Task
     public DateTime CreateAt { get; set; }
     public int Effort { get; set; }
     public virtual Category Category { get; set; }
+    [JsonIgnore]
     public string Summary { get; set; }
 }
 
